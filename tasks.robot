@@ -1,11 +1,11 @@
 *** Settings ***
 Documentation   Template robot main suite.
 Resource        C:\\RobotResources\\pa.resources.robot
-Library         RPA.Browser.Selenium
+Library         RPA.Browser.Selenium    auto_close=${FALSE}
 
 
 *** Keywords ***
-Avaa selain ja kirjaudu
+Open Browser and login
     Open available Browser    ${url} 
     Maximize Browser Window
     Click Element When Visible    id:details-button
@@ -17,4 +17,4 @@ Avaa selain ja kirjaudu
 
 *** Tasks ***
 Minimal task
-    Avaa selain ja kirjaudu
+    Open Browser and login
